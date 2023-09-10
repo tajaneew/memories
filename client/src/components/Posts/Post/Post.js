@@ -18,13 +18,13 @@ const Post = ({ post, setCurrentId }) => {
 
     return (
         <Card className={classes.card}>
-            <CardMedia className={classes.media} image={console.log(post.selectedFile)} height={100} title={post.title} />
+            <CardMedia className={classes.media} component='img' src={post.selectedFile} height={100} title={post.title} />
             <div className={classes.overlay}>
                 <Typography variant="h6">{post.creator}</Typography>
                 <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             <div className={classes.overlay2}>
-                <Button style={{ color: 'black' }} size="small" onClick={() => setCurrentId(post.id)}>
+                <Button style={{ color: 'black' }} size="small" onClick={() => setCurrentId(post._id)}>
                     <MoreHorizIcon fontSize="default" />
                 </Button>
             </div>
